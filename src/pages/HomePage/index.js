@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
@@ -53,6 +54,9 @@ const HomePage = () => {
                       <b> {tag.tag} </b>
                     </div>
                   ))}
+                </div>
+                <div className="house-link">
+                  <NavLink to={`/post/${post.id}`}>Post details</NavLink>
                 </div>
               </div>
             ))

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { startLoading, postsFetched } from "./slice";
-
-const API_URL = `https://codaisseur-coders-network.herokuapp.com`;
+import { API_URL } from "../../config";
 
 export async function fetchPosts(dispatch, getState) {
   try {
