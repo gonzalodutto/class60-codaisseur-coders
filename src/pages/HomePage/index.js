@@ -58,6 +58,7 @@ const HomePage = () => {
             ))
           : "Loading"}
       </div>
+      <button onClick={() => dispatch(fetchPosts)}>Load more</button>
     </div>
   );
 };
