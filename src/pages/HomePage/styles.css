@@ -1,0 +1,20 @@
+.HomePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.postCard{
+    margin: 50px;
+    border: 1px solid black;
+}
+
+.tags {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tag{
+    margin: 5px;
+}
