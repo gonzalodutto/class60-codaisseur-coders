@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import axios from "axios";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../../store/feed/thunks";
