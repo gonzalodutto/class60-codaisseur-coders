@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-// import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
 import moment from "moment";
 
 import { fetchPost } from "../../store/postPage/thunks";
@@ -47,8 +47,7 @@ export default function PostPage() {
               })}
             </span>
           </p>
-          <div>{post.content} </div>
-          {/* <ReactMarkdown children={post.content} /> */}
+          <ReactMarkdown children={post.content} />
 
           <h2>Comments</h2>
           {comments.rows.length === 0 ? (

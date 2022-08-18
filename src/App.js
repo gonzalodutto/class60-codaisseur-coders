@@ -10,6 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/post/:id" element={<PostPage />} />
+        {/* <Route path="/post/:id/comments" element={<PostPage />} /> */}
       </Routes>
     </div>
   );
