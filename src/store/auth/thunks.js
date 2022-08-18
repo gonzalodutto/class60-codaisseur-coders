@@ -12,6 +12,9 @@ export const login = (email, password) => async (dispatch, getState) => {
   // 2. Hold token in constant:
   const token = response.data.jwt;
 
+  // B. 1. Set token in localStorage
+  localStorage.setItem("token", token);
+
   // 3. Fetching the user's profile
   const profileResponse = await axios.get(`${API_URL}/me`, {
     headers: {
@@ -24,5 +27,22 @@ export const login = (email, password) => async (dispatch, getState) => {
   const profile = profileResponse.data;
 
   // 5. Dispach token and user profile data to slice
+  dispatch(userLogin({ token, profile }));
+};
+
+// B. Persisting the session
+export const persistLogin = () => async (dispatch, getState) => {
+  const token = localStorage.getItem("token");
+
+  if (!token) return;
+
+  const profileResponse = await axios.get(`${API_URL}/me`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const profile = profileResponse.data;
+
   dispatch(userLogin({ token, profile }));
 };
